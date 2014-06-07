@@ -2,8 +2,8 @@
 
 ## Description
 
-This is the sample synchronous YouTube viewer with Google Chromecast.
-You can chat with other viewer.
+This is the sample synchronous YouTube viewer with Google Chromecast.  
+You can chat with other viewers.
 
 ## Usage
 
