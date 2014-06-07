@@ -1,0 +1,35 @@
+<% extend "layout" %>
+<% block "css" : %>
+  <link rel="stylesheet" type="text/css" href="/css/index.css?t=201406080000" />
+<% end %>
+<% block "javascript" : %>
+  <script>
+    var applicationId = "<%= @ccApplicationId %>";
+  </script>
+  <script type="text/javascript" src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+  <script type="text/javascript" src="/js/sender.js?t=201406080000"></script>
+  <script type="text/javascript" src="/js/index.js?t=201406080000"></script>
+<% end %>
+<div class="container">
+  <form id="formSend" role="form">
+    <div class="row">
+      <div class="col-xs-3">
+        <input type="text" id="txtNickname" class="form-control" placeholder="Nickname" maxlength="10" />
+      </div>
+      <div class="col-xs-6">
+        <input type="text" id="txtMsg" class="form-control" placeholder="Message" maxlength="100" />
+      </div>
+      <button class="btn btn-default">Send</button>
+    </div>
+  </form>
+  <button class="btn btn-default" onclick="ccLaunchApp()">LaunchApp</button>
+  <button class="btn btn-default" onclick="ccStopApp()">StopApp</button>
+  <button class="btn btn-default" onclick="ccLoadMedia()">Play</button>
+  <div class="video-list">
+    <% for videoId in @videoList : %>
+      <a class="video-target" href="javascript:void(0);" data-video-id="<%= videoId %>"><img src="//img.youtube.com/vi/<%= videoId %>/default.jpg" /></a>
+    <% end %>
+  </div>
+  <div id="boxMsg"></div>
+</div>
+

@@ -1,0 +1,35 @@
+#formSend {
+  margin: 20px 5px;
+}
+
+.line {
+  position: relative;
+}
+
+.line-name {
+  color: #0000ff;
+  font-weight: bold;
+  width: 145px;
+  float: left;
+}
+
+.line-name.system {
+  color: #ff0000;
+}
+
+.line-msg {
+  float: left;
+}
+
+.video-list {
+  margin: 20px 5px;
+}
+
+.video-target img {
+  border: 2px solid #000000;
+}
+
+.video-target img:hover {
+  border: 2px solid #ff0000;
+}
+

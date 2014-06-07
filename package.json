@@ -1,0 +1,14 @@
+{
+  "name": "chromecast-vision",
+  "version": "1.0.0",
+  "description": "sample of realtime chromecast custom receiver",
+  "engines": {
+    "node": "0.11.x"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "socket.io": "0.x",
+    "ect": "0.x"
+  }
+}
+
