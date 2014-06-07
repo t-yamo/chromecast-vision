@@ -3,14 +3,27 @@
 ## Description
 
 This is the sample synchronous YouTube viewer with Google Chromecast.  
-You can chat with other viewers.
+You can chat with other viewers.  
+(You can select the movie from whitelist.)
 
 ## Usage
 
+1. Setup your Chromecast.
+2. Register your receiver information and serial number of Chromecast to https://cast.google.com/publish/ .
+3. Download this code into your environment.
+4. Execute command. `123123123` is your Application ID.
 ```
 npm install
 CC_APPLICATION_ID=123123123 node app.js
 ```
+
+## Demo
+
+Sender  
+http://chromecast-vision.herokuapp.com/
+
+Receiver (access by Chromecast)  
+http://chromecast-vision.herokuapp.com/vision
 
 ## License
 
