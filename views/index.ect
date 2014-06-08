@@ -11,6 +11,14 @@
   <script type="text/javascript" src="/js/index.js?t=201406080000"></script>
 <% end %>
 <div class="container">
+  <div class="alert alert-info box-info">
+    1. Setup Chromecast-Extention to your Chrome(PC) and refresh this console.<br />
+    2. Click "LaunchApp" and choice a device for display Chromecast-Vision receiver on your TV.<br />
+    3. Select movie and send your message.<br />
+    * Source: <a href="https://github.com/t-yamo/chromecast-vision">https://github.com/t-yamo/chromecast-vision</a><br />
+    <button class="btn btn-success" onclick="ccLaunchApp()">LaunchApp</button>
+    <!-- <button class="btn btn-warning" onclick="ccStopApp()">StopApp</button> -->
+  </div>
   <form id="formSend" role="form">
     <div class="row">
       <div class="col-xs-3">
@@ -22,8 +30,6 @@
       <button class="btn btn-default">Send</button>
     </div>
   </form>
-  <button class="btn btn-success" onclick="ccLaunchApp()">LaunchApp</button>
-  <button class="btn btn-warning" onclick="ccStopApp()">StopApp</button>
   <div class="video-list">
     <% for videoId in @videoList : %>
       <a class="video-target" href="javascript:void(0);" data-video-id="<%= videoId %>"><img src="//img.youtube.com/vi/<%= videoId %>/default.jpg" /></a>
