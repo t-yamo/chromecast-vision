@@ -12,12 +12,17 @@
 <% end %>
 <div class="container">
   <div class="alert alert-info box-info">
-    1. Setup Chromecast-Extention to your Chrome(PC) and refresh this console.<br />
-    2. Click "LaunchApp" and choice a device for display Chromecast-Vision receiver on your TV.<br />
-    3. Select movie and send your message.<br />
+    1. Setup Chromecast-Extension to your Chrome(PC) and refresh this console. (Chromcast拡張入れたChromeで操作してね）<br />
+    2. Click Chromecast-Extension and choice a device for display Chromecast-Vision receiver on your TV. （Chromecast拡張から再生したいChromecastを選んでね）<br />
+    3. Select movie and send your message. （動画を選んだりコメント入れたりしてみてね）<br />
+    * TODO: User Experience Guidelines / More Synchronous.<br />
     * Source: <a href="https://github.com/t-yamo/chromecast-vision">https://github.com/t-yamo/chromecast-vision</a><br />
-    <button class="btn btn-success" onclick="ccLaunchApp()">LaunchApp</button>
-    <!-- <button class="btn btn-warning" onclick="ccStopApp()">StopApp</button> -->
+    <!-- : Use UI of Chromecast-Extension insted of custom buttons.
+    <div>
+      <button class="btn btn-success" onclick="ccLaunchApp()">LaunchApp</button>
+      <button class="btn btn-warning" onclick="ccStopApp()">StopApp</button>
+    </div>
+    -->
   </div>
   <form id="formSend" role="form">
     <div class="row">

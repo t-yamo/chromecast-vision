@@ -17,6 +17,11 @@ limitations under the License.
 
 var castReceiverManager = null;
 
+// for Media START (need synchronous session with Chromecast-Extension?)
+var mediaElement = null;
+var mediaManager = null;
+// for Media END
+
 window.onload = function() {
   cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.DEBUG);
   castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
@@ -30,6 +35,10 @@ window.onload = function() {
       window.close();
     }
   }
+  // for Media START (need synchronous session with Chromecast-Extension?)
+  mediaElement = document.getElementById("media");
+  mediaManager = new cast.receiver.MediaManager(mediaElement);
+  // for Media END
   var appConfig = new cast.receiver.CastReceiverManager.Config();
   appConfig.statusText = "Ready to play";
   appConfig.maxInactivity = 6000;

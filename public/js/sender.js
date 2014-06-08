@@ -40,7 +40,38 @@ function onCcError(err) {
 function ccSessionListener(e) {
   console.log("ccSessionListener");
   ccSession = e;
+  // for Media START (not use)
+/*
+  if (ccSession.media.length != 0) {
+    console.log("Found " + ccSession.media.length + " existing media sessions.");
+    onCcMediaDiscovered("ccSessionListener", ccSession.media[0]);
+  }
+  ccSession.addMediaListener(onCcMediaDiscovered.bind(this, "addMediaListener"));
+*/
+  // for Media END
+  ccSession.addUpdateListener(ccSessionUpdateListener.bind(this));
 }
+
+function ccSessionUpdateListener(isAlive) {
+  console.log((isAlive ? "Session Updated" : "Session Removed") + ccSession.sessionId);
+  if (!isAlive) {
+    ccSession = null;
+  }
+}
+
+// for Media START (not use)
+/*
+var ccCurrentMediaSession = null;
+var ccMediaCurrentTime = null;
+function onCcMediaDiscovered(how, mediaSession) {
+  ccCurrentMediaSession = mediaSession;
+  ccCurrentMediaSession.addUpdateListener(onCcMediaStatusUpdate);
+  ccMediaCurrentTime = ccCurrentMediaSession.currentTime;
+}
+function onCcMediaStatusUpdate(isAlive) {
+}
+*/
+// for Media END
 
 function ccReceiverListener(e) {
   if (e === chrome.cast.ReceiverAvailability.AVAILABLE) {
