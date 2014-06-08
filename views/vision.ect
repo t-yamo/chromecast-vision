@@ -24,6 +24,9 @@ limitations under the License.
     <div id="player"></div>
     <div id="boxMsg"></div>
   </div>
+  <script>
+    var delay = <%= (new Date()).getTime() %> - (new Date()).getTime();
+  </script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
   <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>

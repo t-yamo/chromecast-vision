@@ -16,8 +16,6 @@ limitations under the License.
 "use strict";
 
 // NEED applicationId
-var ccCurrentMediaSession = null;
-var ccMediaCurrentTime = null;
 var ccSession = null;
 
 if (!chrome.cast || !chrome.cast.isAvailable) {
@@ -42,20 +40,6 @@ function onCcError(err) {
 function ccSessionListener(e) {
   console.log("ccSessionListener");
   ccSession = e;
-  if (ccSession.media.length != 0) {
-    onCcMediaDiscovered("onCcRequestSessionSuccess", ccSession.media[0]);
-  } else {
-    ccLoadMedia();
-  }
-  ccSession.addMediaListener(onCcMediaDiscovered.bind(this, "addMediaListener"));
-  ccSession.addUpdateListener(ccSessionUpdateListener.bind(this));
-}
-
-function ccSessionUpdateListener(isAlive) {
-  console.log("ccSessionUpdateListener");
-  if (!isAlive) {
-    ccSession = null;
-  }
 }
 
 function ccReceiverListener(e) {
@@ -83,34 +67,5 @@ function ccStopApp() {
 
 function onCcStopAppSuccess() {
   console.log("onCcStopAppSuccess");
-}
-
-function ccLoadMedia() {
-  console.log("ccLoadMedia");
-  if (!ccSession) {
-    return;
-  }
-  var mediaInfo = new chrome.cast.media.MediaInfo("vgyLXQr49BA", "");
-  var request = new chrome.cast.media.LoadRequest(mediaInfo);
-  ccSession.loadMedia(request, onCcMediaDiscovered.bind(this, "loadMedia"), onCcMediaError.bind(this));
-}
-
-function onCcMediaError(err) {
-  console.log("onCcMediaError");
-  console.dir(err);
-}
-
-function onCcMediaDiscovered(how, mediaSession) {
-  console.log("onCcMediaDiscovered");
-  ccCurrentMediaSession = mediaSession;
-  console.dir(how);
-  console.dir(mediaSession);
-  mediaSession.addUpdateListener(onCcMediaStatusUpdate);
-  ccMediaCurrentTime = mediaSession.currentTime;
-}
-
-function onCcMediaStatusUpdate(isMediaObjectAlive) {
-  console.log("onCcMediaStatusUpdate");
-  console.dir(isMediaObjectAlive);
 }
 

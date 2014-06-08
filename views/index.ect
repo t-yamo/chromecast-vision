@@ -22,9 +22,8 @@
       <button class="btn btn-default">Send</button>
     </div>
   </form>
-  <button class="btn btn-default" onclick="ccLaunchApp()">LaunchApp</button>
-  <button class="btn btn-default" onclick="ccStopApp()">StopApp</button>
-  <button class="btn btn-default" onclick="ccLoadMedia()">Play</button>
+  <button class="btn btn-success" onclick="ccLaunchApp()">LaunchApp</button>
+  <button class="btn btn-warning" onclick="ccStopApp()">StopApp</button>
   <div class="video-list">
     <% for videoId in @videoList : %>
       <a class="video-target" href="javascript:void(0);" data-video-id="<%= videoId %>"><img src="//img.youtube.com/vi/<%= videoId %>/default.jpg" /></a>

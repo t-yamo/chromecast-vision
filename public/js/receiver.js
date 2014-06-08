@@ -84,16 +84,17 @@ function onPlayerReady(event) {
   ytInitialized = true;
 }
 
-function play(videoId, startTime) {
-  console.log("play [" + videoId + "] from [" + startTime + "]sec");
-  var kickTime = getTime();
+function play(videoId, startTime, startTstamp) {
+  console.log("request play [" + videoId + "](started at [" + startTstamp + "]) from [" + startTime + "] (delay is [" + delay + "])");
   var playTimer = setInterval(function() {
     if (ytInitialized) {
       clearInterval(playTimer);
+      var realStartTime = (getTime() - startTstamp + delay) / 1000;
       ytPlayer.loadVideoById({
         videoId: videoId,
-        startSeconds: startTime + ((getTime() - kickTime) / 1000)
+        startSeconds: realStartTime
       });
+      console.log("execute play [" + videoId + "] from [" + realStartTime + "]sec");
     }
   }, 500); 
 }

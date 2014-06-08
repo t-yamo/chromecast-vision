@@ -65,7 +65,7 @@ io.on("connection", function(client) {
       actor: "system",
       name: previousVideoMsg.name,
       videoId: previousVideoMsg.videoId,
-      startTime: (getTime() - previousVideoMsg.startTstamp) / 1000,
+      startTime: getTime() - previousVideoMsg.startTstamp,
       startTstamp: previousVideoMsg.startTstamp
     };
     client.emit("initialized", msg);

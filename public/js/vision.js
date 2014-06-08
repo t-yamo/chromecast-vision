@@ -27,7 +27,7 @@ $(function() {
 
   socket.on("initialized", function(data) {
     addMsg("system", "SYSTEM", "[" + data.name + "] set vision to " + data.videoId + ".");
-    play(data.videoId, data.startTime)
+    play(data.videoId, data.startTime, data.startTstamp)
   });
 
   socket.on("push", function(data) {
@@ -36,7 +36,7 @@ $(function() {
 
   socket.on("changed", function(data) {
     addMsg("system", "SYSTEM", "[" + data.name + "] changed vision to " + data.videoId + ".");
-    play(data.videoId, data.startTime);
+    play(data.videoId, data.startTime, data.startTstamp);
   });
 
   function addMsg(actor, name, msg) {
