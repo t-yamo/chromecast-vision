@@ -20,10 +20,10 @@ CC_APPLICATION_ID=123123123 node app.js
 ## Demo
 
 Sender  
-http://chromecast-vision.herokuapp.com/
+https://chromecast-vision.herokuapp.com/
 
 Receiver (By Chromecast, but you can display this in Chrome(PC))  
-http://chromecast-vision.herokuapp.com/vision
+https://chromecast-vision.herokuapp.com/vision
 
 Sender image
 ![Sender](http://cdn-ak.f.st-hatena.com/images/fotolife/t/t_yamo/20140608/20140608170025.jpg)
