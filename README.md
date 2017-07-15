@@ -8,8 +8,8 @@ You can chat with other viewers.
 
 ## Usage
 
-1. Setup your Chromecast.
-2. Register your receiver and serial number of Chromecast to https://cast.google.com/publish/ and get Application ID.
+1. Setup your Chromecast and install Chromecast Extension to PC Chrome.
+2. Register your receiver and serial number of Chromecast to https://cast.google.com/publish/ and get Application ID to Chromecast SDK Console.
 3. Download this code into your environment.
 4. Execute command. `123123123` is your Application ID.
 ```
